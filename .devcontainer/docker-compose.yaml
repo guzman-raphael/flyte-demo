@@ -1,0 +1,20 @@
+version: "3"
+services:
+  app:
+    cpus: 2
+    mem_limit: 8g
+    build:
+      context: ..
+      dockerfile: ./.devcontainer/Dockerfile
+    image: raphaelguzman/flyte-demo:latest
+    environment:
+      - DJ_HOST
+      - DJ_USER
+      - DJ_PASS
+    volumes:
+      - ..:/workspaces/flyte-demo:cached
+      - docker_data:/var/lib/docker  # persist docker images
+    privileged: true # only because of dind
+    network_mode: host
+volumes:
+  docker_data:
