@@ -3,7 +3,7 @@ from utils_v4 import job
 import os
 
 schema = dj.Schema("flyte_demo")
-image = "raphaelguzman/flyte-demo-task:v0.1.3"
+image = "raphaelguzman/flyte-demo-task:v0.1.4"
 environment_variables = {
     "DJ_HOST": os.getenv("DJ_HOST"),
     "DJ_USER": os.getenv("DJ_USER"),

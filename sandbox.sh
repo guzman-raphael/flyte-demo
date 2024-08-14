@@ -20,8 +20,8 @@ install_dependencies() {
 	if ! kubectl &> /dev/null
 	then
 		echo "Installing kubectl..." && sleep 3
-		curl "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" -Lo /usr/local/bin/kubectl
-		chmod +x /usr/local/bin/kubectl
+		sudo curl "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" -Lo /usr/local/bin/kubectl
+		sudo chmod +x /usr/local/bin/kubectl
 	fi
 
 	if ! flytectl &> /dev/null
@@ -29,6 +29,7 @@ install_dependencies() {
 		echo "Installing flytectl..." && sleep 3
 		curl -sL https://ctl.flyte.org/install | sudo bash
 		sudo mv ./bin/flytectl /usr/local/bin/
+		sudo rm -R ./bin
 	fi
 
 	echo "Dependencies installed."

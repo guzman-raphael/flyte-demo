@@ -10,13 +10,13 @@
 1. ```bash
    # prepare task environment (replace all `raphaelguzman` with DockerHub user)
    docker login
-   docker build . -t raphaelguzman/flyte-demo-task:v0.1.3
-   docker push raphaelguzman/flyte-demo-task:v0.1.3
+   docker build . -t raphaelguzman/flyte-demo-task:v0.1.4
+   docker push raphaelguzman/flyte-demo-task:v0.1.4
    ```
 1. Launch `Demo` DevContainer
 1. ```bash
    # run workflow
-   pyflyte run --remote --project flytesnacks --domain development src/workflow_v4.py ignore --session_rows '[{"session_id": 0}]' --parameter_rows '[{"param_id": 0, "param_a": 5, "param_b": 8}]'
+   pyflyte run --remote --project flytesnacks --domain development src/workflow_v4.py flow1 --session_rows '[{"session_id": 0}]' --parameter_rows '[{"param_id": 0, "param_a": 5, "param_b": 8}]'
    ```
 1. Explore Console at `http://localhost:30080/console`
 

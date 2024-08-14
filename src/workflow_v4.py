@@ -5,7 +5,7 @@ from typing import List
 
 
 @flow
-def ignore(session_rows: List[dict], parameter_rows: List[dict]):
+def flow1(session_rows: List[dict], parameter_rows: List[dict]):
     return dict(
         diagram=dj.Di(pipeline_v4.schema),
         package_name="pipeline_v4",
