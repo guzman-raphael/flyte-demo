@@ -1,5 +1,16 @@
 ## Flyte Demo
 
+
+![screenshot of flyte workflow success](./screenshots/wf_success.png "Flyte Workflow")
+
+### Outline
+
+1. Use Case & Limitations
+1. Definitions
+1. Launching Workflows
+1. Successful Workflow
+1. Failed Workflow
+
 ### Instructions
 
 1. Setup and configure MySQL RDS
@@ -14,6 +25,10 @@
    docker push raphaelguzman/flyte-demo-task:v0.1.4
    ```
 1. Launch `Demo` DevContainer
+1. ```bash
+   # register workflow
+   pyflyte register --project flytesnacks --domain development src/workflow_v4.py
+   ```
 1. ```bash
    # run workflow
    pyflyte run --remote --project flytesnacks --domain development src/workflow_v4.py flow1 --session_rows '[{"session_id": 0}]' --parameter_rows '[{"param_id": 0, "param_a": 5, "param_b": 8}]'
