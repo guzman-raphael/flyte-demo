@@ -3,7 +3,7 @@
 ### Instructions
 
 1. Setup and configure MySQL RDS
-   - deployed on aws + add sg rule for 3306 that should be removed later
+   - deployed on aws + add sg rule for port 3306 that should be removed later
 1. Add DataJoint env vars to `./.devcontainer/.env`
 1. Run `./sandbox.sh install_dependencies` locally
 1. Run `./sandbox.sh deploy` locally
@@ -20,7 +20,7 @@
    ```
 1. Explore Console at `http://localhost:30080/console`
 
-# Teardown
+### Teardown
 
 1. Close `Demo` DevContainer
 1. `./sandbox.sh teardown`
