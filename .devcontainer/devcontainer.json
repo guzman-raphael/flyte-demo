@@ -18,6 +18,7 @@
 		"vscode": {
 			"extensions": [
 				"ms-python.python",
+				"ms-python.black-formatter",
 				"ms-toolsai.jupyter"
 			]
 		}
